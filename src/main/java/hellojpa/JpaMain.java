@@ -19,18 +19,16 @@ public class JpaMain {
         tx.begin();
 
 
-        try{
-          /* Member findMember =  em.find(Member.class, 1L);*/
+        try {
+            //영속상태
+        Member member = em.find(Member.class,150L);
+        member.setName("AAAAAA");
 
-            List<Member> result =  em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(5)
-                    .setMaxResults(8)
-                            .getResultList();
+        // 엔티티매니저를 통째로 지움
+        em.clear();
 
-            for (Member member : result){
-                System.out.println("member.name="+ member.getName());
-            }
 
+        System.out.println("==============");
 
             tx.commit();
         }catch (Exception e){
