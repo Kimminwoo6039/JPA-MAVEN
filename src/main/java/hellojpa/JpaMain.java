@@ -20,15 +20,6 @@ public class JpaMain {
 
 
         try {
-            //영속상태
-        Member member = em.find(Member.class,150L);
-        member.setName("AAAAAA");
-
-        // 엔티티매니저를 통째로 지움
-        em.clear();
-
-
-        System.out.println("==============");
 
             tx.commit();
         }catch (Exception e){
