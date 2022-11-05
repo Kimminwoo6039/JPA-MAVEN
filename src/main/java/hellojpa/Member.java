@@ -7,27 +7,28 @@ import java.util.Date;
 @Entity
 public class Member {
 
-
-    @Id // PK 매핑 (프라이머리키)
+    @Id @GeneratedValue
     private Long id;
 
-    @Column(name = "name") // DB 에는 name 인데 객체로는 username 으로 사용하고싶을때
-    private String username;
+    @Column(name="USERNAME")
+    private String name;
 
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
-
-
-
-
-
-
-
-
-
-
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public Member(){
 
