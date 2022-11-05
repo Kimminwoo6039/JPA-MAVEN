@@ -14,7 +14,7 @@ public class JpaMain {
         // 엔티티매니저팩토리 실행시 한번 만들어놈
 
         EntityManager em = emf.createEntityManager();
-
+    // 실행
         EntityTransaction tx =  em.getTransaction();
         tx.begin();
 
